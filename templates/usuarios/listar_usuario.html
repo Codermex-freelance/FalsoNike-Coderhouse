@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Listado de Usuarios
+{% endblock %}
+
+{% block contenido %}
+
+{% if object_list %}
+
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Listado de Usuarios</strong>
+    </div>
+    <div class ="table.stats order-table ov-h">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>USERNAME</th>
+                    <th>NOMBRES</th>
+                    <th>APELLIDOS</th>
+                    <th>OPCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in object_list %}
+                <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.username }}</td>
+                    <td>{{ usuario.nombres }}</td>
+                    <td>{{ usuario.apellidos }}</td>
+                    <td>
+                        <a href="" class="btn btn-danger">Eliminar</a>
+                        <a href="http://localhost:8000/Nike/Editar_User/{{usuario.id}}/" class="btn btn-primary">Editar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<h1> No existen usuarios registrados </h1>
+{% endif %}
+{% endblock %}

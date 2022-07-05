@@ -85,7 +85,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Nike/Detalle_User/{{request.user.pk}}">{{request.user.username}}</a>
+                    <a class="nav-link" href="/Nike/Detalle_User/{{request.user.pk}}/">Perfil: {{request.user.username}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/users/detail-user-profile/{{request.user.user_profile.pk}}/">
@@ -100,8 +100,16 @@
                 <li class="nav-item">
                     <a class="nav-link" style="color:#ffffff" href="/login/">Login</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" style="color:#ffffff" href="/register/">Register</a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#ffffff" href="RegistrarUsuario">Registrar</a>
+                </li>
+                {% endif %}
+                {% if request.user.is_staff %}
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#ffffff" href="/usuarios/listado_usuario/">Control Usuarios</a>
                 </li>
                 {% endif %}
             </ul>

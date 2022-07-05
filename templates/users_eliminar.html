@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Eliminar indumentarias
+{% endblock %}
+
+{% block contenido %}
+
+<div class="alert alert-primary text-center" role="alert" style=" border-radius: 5.25rem; margin-top:1rem;
+background-color: rgba(153, 160, 146, 0.44); border-color: #000000;">
+    <h5 style='color: rgb(0, 0, 0); ' > Estas por eliminar el usuario {{object.username}}.<br>
+        ¿Desea continuar?</h5>
+        <form method='POST' >
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Si</button>
+        </form>
+</div>
+
+
+
+
+{% endblock %}

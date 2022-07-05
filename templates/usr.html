@@ -8,16 +8,15 @@
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
 
-    <div class="card" style="width: 21rem; border-radius: 2.25rem;" >
-        <img class="card-img-top text-center" src="{{object.photo.url}}" alt="Foto de perfil" width="200" height="200"
-        style="border-top-left-radius: calc(4.25rem - 1px);border-top-right-radius: calc(4.25rem - 1px);">
+    <div class="card" style="width: 18rem; background-color: #ffffff8f" >
+        <img class="card-img-top text-center" src="{{object.imagen.url}}" onerror="this.src='/media/profile_image/default.jpg'" alt="Foto de perfil" width="200" height="200">
         <div class="card-body text-center">
-            <h5 class = "text-center"><ins>{{object.username}}</ins> </h5>
-            <p class = "text-center"><b>Nombre: </b>{{object.first_name}}</p>
-            <p class = "text-center"><b>Apellido: </b>{{object.last_name}}</p>
-            <p class = "text-center"><b>Email: </b>{{object.email}}</p>
-            <a href="/Nike/indumentarias-editar/{{object.id}}/" class= 'btn btn-primary'> Editar  </a>
-            <a href="/Nike/indumentarias-eliminar/{{object.id}}/" class= 'btn btn-danger'> Eliminar </a>
+            <h2 class = "text-center"><ins>{{object.username}}</ins> </h2>
+            <p class = "text-left"><b>Nombre: </b>{{object.nombres}}</p>
+            <p class = "text-left"><b>Apellido: </b>{{object.apellidos}}</p>
+            <p class = "text-left"><b>Email: </b>{{object.email}}</p>
+            <a href="/Nike/Editar_User/{{object.id}}/" class= 'btn btn-primary'> Editar  </a>
+            <a href="/Nike/Eliminar_User/{{object.id}}/" class= 'btn btn-danger'> Eliminar </a>
         </div>
     </div>
 

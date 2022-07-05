@@ -23,6 +23,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Bickham script pro;">
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Nike/sobre_nosotros" style="color:#ffffff">
+                                Sobre Nosotros
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false" style="color:#ffffff">
@@ -66,7 +71,7 @@
                             <a class="nav-link" style="color:#ffffff" href="/login/">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:#ffffff" href="/register/">Register</a>
+                            <a class="nav-link" style="color:#ffffff" href="/RegistrarUsuario">Registrar</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0" action="/Nike/buscar_productos_indumentarias/" method="GET" >
@@ -89,7 +94,8 @@
                                         {{form.as_table}}
                                 </div>
                                 {% csrf_token %}
-                                <input class="btn btn-secondary" type="submit", value="Ingresar">
+                                <!--<input class="btn btn-secondary" type="submit", value="Ingresar">-->
+                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Iniciar Sesion</button>
                             </form>
                         </div>
                     </div>

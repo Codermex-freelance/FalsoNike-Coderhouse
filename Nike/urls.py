@@ -1,6 +1,6 @@
 from django.urls import path
 
-from Nike.views import Detalle_User,sobre_nosotros,Crear_indumentaria,Detalle_accesorios, Detalle_indumentarias, Detalle_calzado, Eliminar_indumentarias, Eliminar_accesorios, Eliminar_calzado,Editar_accesorios, Editar_indumentarias, Editar_calzado,buscar_productos_indumentarias,Pelota,Pulseras,Cantiplora,Anteojos,Muñequeras,Bolsos_Mochilas,Llaveros,Remeras,Camperas,Pantalones,Buzos,crear_productos_calzados,crear_productos_accesorios,indumentaria_view,ZapatillaDeportiva,ZapatillaComunes,Botines,Ojotas
+from Nike.views import Eliminar_User,Editar_User,Detalle_User,sobre_nosotros,Crear_indumentaria,Detalle_accesorios, Detalle_indumentarias, Detalle_calzado, Eliminar_indumentarias, Eliminar_accesorios, Eliminar_calzado,Editar_accesorios, Editar_indumentarias, Editar_calzado,buscar_productos_indumentarias,Pelota,Pulseras,Cantiplora,Anteojos,Muñequeras,Bolsos_Mochilas,Llaveros,Remeras,Camperas,Pantalones,Buzos,crear_productos_calzados,crear_productos_accesorios,indumentaria_view,ZapatillaDeportiva,ZapatillaComunes,Botines,Ojotas
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -27,6 +27,9 @@ urlpatterns =[
     path('Ojotas/', Ojotas, name = 'Ojotas'),
 
     path('Detalle_User/<int:pk>/', Detalle_User.as_view(), name = 'Detalle_User'),
+    path('Editar_User/<int:pk>/',Editar_User.as_view(), name='Editar_User'),
+    path('Eliminar_User/<int:pk>/',Eliminar_User.as_view(), name='Eliminar_User'),
+
 
     #path('Accesorios/', accesorio_view, name = 'Accesorios'),
     path('ADDAccesorios/', crear_productos_accesorios.as_view(), name = 'ADDAccesorios'),

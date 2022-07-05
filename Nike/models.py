@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class indumentarias(models.Model):
@@ -8,6 +7,7 @@ class indumentarias(models.Model):
     precio = models.FloatField()
     talle = models.CharField(max_length=40)
     color = models.CharField(max_length=40)
+    is_active = models.BooleanField(default=True)
     imagen = models.ImageField(upload_to="indumentaria",null=True)
     categoria = models.ForeignKey('Categoria_Indumentaria', on_delete=models.CASCADE, related_name='Nike')
 
@@ -24,6 +24,7 @@ class calzados(models.Model):
     precio = models.FloatField()
     talle = models.CharField(max_length=40)
     color = models.CharField(max_length=40)
+    is_active = models.BooleanField(default=True)
     imagen = models.ImageField(upload_to="calzado",null=True)
     categoria = models.ForeignKey('Categoria_Calzado', on_delete=models.CASCADE, related_name='Nike')
 
@@ -39,6 +40,7 @@ class accesorios(models.Model):
     nombre = models.CharField(max_length=40)
     precio = models.FloatField()
     color = models.CharField(max_length=40)
+    is_active = models.BooleanField(default=True)
     imagen = models.ImageField(upload_to="accesorio",null=True)
     categoria = models.ForeignKey('Categoria_Accesorio', on_delete=models.CASCADE, related_name='Nike')#une con la tabla categoria y me muestra un listado
 
@@ -48,12 +50,6 @@ class accesorios(models.Model):
 
     def __str__(self):
         return F'Producto {self.nombre} cuesta un total de ${self.precio}'
-
-class Avatar(models.Model):
-    #user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile')
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    #phone = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='avatares',null=True,blank=True)
 
 class Categoria_Indumentaria(models.Model):
     name = models.CharField(max_length=50)

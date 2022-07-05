@@ -1,20 +1,40 @@
 
 from django.shortcuts import render,redirect
 from Nike.models import indumentarias,calzados,accesorios
-from django.views.generic import DetailView, UpdateView, DeleteView,CreateView,ListView
+from django.views.generic import DetailView, UpdateView, DeleteView,CreateView
+from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
-from users.models import User_profile
+from users.models import Usuario
 from django.contrib.auth.models import User
 
 
+
+
+
 class Detalle_User(DetailView):
-    model= User
+    model= Usuario
     template_name= 'usr.html'
 
     def get_success_url(self):
         return reverse ('usr',kwargs={'pk':self.object.pk})
+
+class Editar_User (UpdateView):
+    model= Usuario
+    template_name= 'users_editar.html'
+    fields= ['username','email','nombres','apellidos','imagen']
+
+    def get_success_url(self):
+        return reverse ('index')
+
+class Eliminar_User(DeleteView):
+    model= Usuario
+    template_name= 'users_eliminar.html'
+
+    def get_success_url(self):
+        return reverse ('index')
+
 #--------------------INFO DE LA WEB Y LOS CREADORES---------------------------
 def sobre_nosotros(request):
     return render(request, 'Sobre_mi.html')
@@ -25,7 +45,7 @@ class indumentaria_view(ListView):
     model = indumentarias
     print('paso por aca')
     template_name= 'indumentaria.html'
-    queryset = indumentarias.objects.filter(categoria = 1)
+    queryset = indumentarias.objects.filter(is_active = True)
 
 class Crear_indumentaria(LoginRequiredMixin, CreateView):
     model = indumentarias
@@ -57,9 +77,11 @@ class Detalle_indumentarias(DetailView):
 
 class Remeras(ListView):
     model = indumentarias
-    print('paso por aca')
     template_name= 'indumentaria.html'
-    queryset = indumentarias.objects.filter(categoria = 1)
+    print(ListView)
+    def get_queryset(self):
+        return self.model.objects.filter(categoria = 1)
+    #queryset = indumentarias.objects.filter(is_active = True)
 
 
 def Pantalones(request):
@@ -220,5 +242,4 @@ def buscar_productos_indumentarias(request):
     else:
         context = {"errors": "No se encontro el producto"}
     return render(request, "search_product.html", context=context)
-
 
