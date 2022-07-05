@@ -14,13 +14,22 @@ Editar
 <br>
 <br>
 <br>
-<form action="" method="POST" enctype="multipart/form-data" style="color:#ffffff">
-    {% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <input type="submit" , value="Enviar!">
-</form>
+<div class="modal-dialog text-center" style="color: rgb(255, 255, 255); left:80px;top:10px;">
+    <div class="col-sm-12">
+        <div class="modal-content" width="100" height="100" style="border:0; background-color:#00000000";>
+            <div class="col-10">
+                <img src="/media/nike.png" width="100" height="100">
+            </div>
+            <form action="" method="POST" enctype="multipart/form-data" style="color:#ffffff">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+                <input class="btn btn-secondary"  type="submit" , value="Actualizar">
+            </form>
+        </div>
+    </div>
+</div>
 
 {% elif nuevo_indumentaria %}
 

@@ -38,6 +38,7 @@ class Usuario(AbstractBaseUser):
     nombres = models.CharField('Nombre',max_length=200, blank=True, null=True)
     apellidos = models.CharField('Apellido',max_length=200,blank=True,null=True)
     imagen = models.ImageField('Imagen de Perfil',upload_to='perfil/',max_length=200,blank=True, null=True,default='default.jpg')
+    linkedin = models.URLField('Linkedin',max_length=200,blank=True,null=True)
     usuario_activo = models.BooleanField(default = True)
     usuario_administrador = models.BooleanField(default= False)
     objects = UsuarioManager()

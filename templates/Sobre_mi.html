@@ -85,9 +85,11 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{request.user.username}}</a>
+                    <a class="nav-link" href="#">Perfil: {{request.user.username}}</a>
                 </li>
-
+                <li class="nav-item">
+                    <img src="{{request.user.imagen.url}}" style="height: 2rem;">
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color:#ffffff" href="/logout/">Logout</a>
                 </li>

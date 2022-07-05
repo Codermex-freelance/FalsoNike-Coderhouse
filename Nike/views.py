@@ -23,7 +23,7 @@ class Detalle_User(DetailView):
 class Editar_User (UpdateView):
     model= Usuario
     template_name= 'users_editar.html'
-    fields= ['username','email','nombres','apellidos','imagen']
+    fields= ['username','email','nombres','apellidos','linkedin','imagen']
 
     def get_success_url(self):
         return reverse ('index')
@@ -61,7 +61,7 @@ class Editar_indumentarias (UpdateView):
     fields= '__all__'
 
     def get_success_url(self):
-        return reverse ('Indumentarias')
+        return reverse ('index')
 
 class Eliminar_indumentarias(DeleteView):
     model= indumentarias
@@ -118,7 +118,7 @@ class Editar_calzado (UpdateView):
     fields= '__all__'
 
     def get_success_url(self):
-        return reverse ('Calzados')
+        return reverse ('index')
 
 class Eliminar_calzado(DeleteView):
     model= calzados
@@ -170,7 +170,7 @@ class Editar_accesorios (UpdateView):
     fields= '__all__'
 
     def get_success_url(self):
-        return reverse ('Accesorios')
+        return reverse ('index')
 
 class Eliminar_accesorios(DeleteView):
     model= accesorios
