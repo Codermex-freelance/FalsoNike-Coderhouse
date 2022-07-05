@@ -88,9 +88,7 @@
                     <a class="nav-link" href="/Nike/Detalle_User/{{request.user.pk}}/">Perfil: {{request.user.username}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/users/detail-user-profile/{{request.user.user_profile.pk}}/">
-                        <img src="{{request.user.user_profile.image.url}}" style="height: 2rem;">
-                    </a>
+                        <img src="{{request.user.imagen.url}}" style="height: 2rem;">
                 </li>
 
                 <li class="nav-item">
