@@ -59,7 +59,7 @@ class Categoria_Indumentaria(models.Model):
         verbose_name_plural = 'Categoria_Indumentarias'
 
     def __str__(self):
-        return self.name
+        return F'Categoria indumentaria {self.id}: {self.name}'
 
 class Categoria_Calzado(models.Model):
     name = models.CharField(max_length=50)
@@ -69,7 +69,7 @@ class Categoria_Calzado(models.Model):
         verbose_name_plural = 'Categoria_Calzados'
 
     def __str__(self):
-        return self.name
+        return F'Categoria indumentaria {self.id}: {self.name}'
 
 class Categoria_Accesorio(models.Model):
     name = models.CharField(max_length=50)
@@ -79,5 +79,5 @@ class Categoria_Accesorio(models.Model):
         verbose_name_plural = 'Categoria_Accesorios'
 
     def __str__(self):
-        return self.name
+        return F'Categoria indumentaria {self.id}: {self.name}'
 

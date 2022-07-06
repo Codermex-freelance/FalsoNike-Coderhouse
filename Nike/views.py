@@ -9,10 +9,6 @@ from django.urls import reverse, reverse_lazy
 from users.models import Usuario
 from django.contrib.auth.models import User
 
-
-
-
-
 class Detalle_User(DetailView):
     model= Usuario
     template_name= 'usr.html'
@@ -38,7 +34,6 @@ class Eliminar_User(DeleteView):
 #--------------------INFO DE LA WEB Y LOS CREADORES---------------------------
 def sobre_nosotros(request):
     return render(request, 'Sobre_mi.html')
-
 #--------------------------------------CRUD DE INDUMENTARIAS--------------------------------------------------------------
 
 class indumentaria_view(ListView):
@@ -75,14 +70,11 @@ class Detalle_indumentarias(DetailView):
     template_name= 'indumentarias_detalle.html'
 
 
-class Remeras(ListView):
-    model = indumentarias
-    template_name= 'indumentaria.html'
-    print(ListView)
-    def get_queryset(self):
-        return self.model.objects.filter(categoria = 1)
-    #queryset = indumentarias.objects.filter(is_active = True)
-
+def Remeras(request):
+    print(request.method)
+    productos = indumentarias.objects.filter(categoria = 1)
+    context = {'productos':productos}
+    return render(request, 'indumentaria.html', context=context)
 
 def Pantalones(request):
     print('paso por aca')

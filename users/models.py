@@ -38,7 +38,7 @@ class Usuario(AbstractBaseUser):
     nombres = models.CharField('Nombre',max_length=200, blank=True, null=True)
     apellidos = models.CharField('Apellido',max_length=200,blank=True,null=True)
     imagen = models.ImageField('Imagen de Perfil',upload_to='perfil/',max_length=200,blank=True, null=True,default='default.jpg')
-    linkedin = models.URLField('Linkedin',max_length=200,blank=True,null=True)
+    linkedin = models.URLField('Linkedin',max_length=200,blank=True,null=True,default='#')
     usuario_activo = models.BooleanField(default = True)
     usuario_administrador = models.BooleanField(default= False)
     objects = UsuarioManager()
@@ -47,7 +47,7 @@ class Usuario(AbstractBaseUser):
     REQUIRED_FIELDS = ['email','nombres','apellidos'] #aca son las cosas que te van a pedir al registrarte
 
     def __str__(self):
-        return f'{self.nombres},{self.apellidos}'
+        return f'El nombre de usuario es: {self.username}, donde corresponde a la persona {self.nombres} {self.apellidos}'
 
     def has_perm(self,perm,obj = None):
         return True
