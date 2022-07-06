@@ -1,0 +1,68 @@
+----------------------------------------------------------------TRABAJO FINAL PYTHON----------------------------------------------------------------
+------------------------------------------------------------------------URLS------------------------------------------------------------------------
+http://localhost:8000/                                                          -> URL de inicio de pagina
+http://localhost:8000/Nike/sobre_nosotros/                                      -> URL comentando sobre la pagina y informacion de los integrantes del proyecto
+http://localhost:8000/RegistrarUsuario/                                         -> URL para registrar usuarios
+http://localhost:8000/login/                                                    -> URL para el login
+http://localhost:8000/Nike/Remeras/                                             -> URL de consultas de productos indumentarias de la categoria Remeras
+http://localhost:8000/Nike/Pantalones/                                          -> URL de consultas de productos indumentarias de la categoria Pantalones
+http://localhost:8000/Nike/Camperas/                                            -> URL de consultas de productos indumentarias de la categoria Camperas
+http://localhost:8000/Nike/Buzos/                                               -> URL de consultas de productos indumentarias de la categoria Buzos
+http://localhost:8000/Nike/indumentarias-detalle/id indumentaria/               -> URL del detalle de productos indumentarias
+http://localhost:8000/Nike/indumentarias-editar/id indumentaria/                -> URL de la edicion de productos indumentarias
+http://localhost:8000/Nike/indumentarias-eliminar/id indumentaria/              -> URL de la eliminacion de productos indumentarias
+http://localhost:8000/Nike/ZapatillaDeportiva/                                  -> URL de consultas de productos calzados de la categoria ZapatillaDeportiva
+http://localhost:8000/Nike/ZapatillaComunes/                                    -> URL de consultas de productos calzados de la categoria ZapatillaComunes
+http://localhost:8000/Nike/Botines/                                             -> URL de consultas de productos calzados de la categoria Botines
+http://localhost:8000/Nike/Ojotas/                                              -> URL de consultas de productos calzados de la categoria Ojotas
+http://localhost:8000/Nike/calzado-detalle/id calzado/                          -> URL del detalle de productos calzados
+http://localhost:8000/Nike/calzado-editar/id calzado/                           -> URL de la edicion de productos calzados
+http://localhost:8000/Nike/calzado-eliminar/id calzado/                         -> URL de la eliminacion de productos calzados
+http://localhost:8000/Nike/Pelota/                                              -> URL de consultas de productos accesorios de la categoria Pelota
+http://localhost:8000/Nike/Pulseras/                                            -> URL de consultas de productos accesorios de la categoria Pulseras
+http://localhost:8000/Nike/Cantiplora/                                          -> URL de consultas de productos accesorios de la categoria Cantiplora
+http://localhost:8000/Nike/Anteojos/                                            -> URL de consultas de productos accesorios de la categoria Anteojos
+http://localhost:8000/Nike/Muñequeras/                                          -> URL de consultas de Productos accesorios de la categoria Muñequeras
+http://localhost:8000/Nike/Bolsos_Mochilas/                                     -> URL de consultas de productos accesorios de la categoria Bolsos_Mochilas
+http://localhost:8000/Nike/Llaveros/                                            -> URL de consultas de productos accesorios de la categoria Llaveros
+http://localhost:8000/Nike/accesorios-detalle/id accesorio/                     -> URL del detalle de productos accesorios
+http://localhost:8000/Nike/accesorios-editar/id accesorio/                      -> URL de la edicion de productos accesorios
+http://localhost:8000/Nike/accesorios-eliminar/id accesorio/                    -> URL de la eliminacion de productos accesorios
+http://localhost:8000/Nike/ADDIndumentarias/                                    -> URL de ingresos de productos indumentarias
+http://localhost:8000/Nike/ADDCalzados/                                         -> URL de consultas de productos calzaddos
+http://localhost:8000/Nike/ADDAccesorios/                                       -> URL de consultas de productos accesorios
+http://localhost:8000/Nike/Detalle_User/aca le ponemos el id del usuario/       -> URL del perfil de usuario que se encuentra logueado
+http://localhost:8000/Nike/Editar_User/aca le ponemos el id del usuario/        -> URL de la edicion del usuario que se encuentra logueado
+http://localhost:8000/Nike/Eliminar_User/aca le ponemos el id del usuario/      -> URL de la eliminacion del usuario que se encuentra logueado
+http://localhost:8000/usuarios/listado_usuario/                                 -> URL del listado de usuario
+http://localhost:8000/admin/                                                    -> Administración de Django
+---------------------------------------------------------------------¿COMO FUNCIONA?---------------------------------------------------------------------
+PASO 1: REGISTRAR EL USUARIO 1 DESDE LA TERMINAL PARA QUE SEA EL ADMINISTRADOR
+PASO 2: INGRESAR LAS CANTEGORIAS DESDE EL ADMIN
+    A-INDUMENTARIAS CATEGORIAS
+        1.Remeras
+        2.Pantalones
+        3.Camperas
+        4.Buzos
+    B-CALZADOS CATEGORIAS
+        1.Zapatilla Deportivas
+        2.Zapatilla Comunes
+        3.Botines
+        4.Ojotas
+    C-ACCESORIOS CATEGORIAS
+        1.Pelota
+        2.Pulseras
+        3.Cantiplora
+        4.Anteojos
+        5.Muñequeras
+        6.Bolsos y Mochilas
+        7.Llaveros
+PASO 3: LOGUEARSE CON USUARIO ADMIN PARA INGRESAR PRODUCTOS DONDE SOLAMENTE LOS USUARIOS CON PERMISOS PODRAN
+PASO 4: INGRESO DE PRODUCTOS
+        -INDUMENTARIAS,CALZADOS,ACCESORIOS
+PASO 5: CONSULTA DE PRODUCTOS
+---------NO IMPORTA ORDEN-----------
+PASO 6: EDITAR/ELIMINAR PRODUCTOS
+PASO 7: BUSQUEDA GENERAL
+PASO 8: CONTROL DE USUARIOS
+        -EDITAR/ELIMINAR
