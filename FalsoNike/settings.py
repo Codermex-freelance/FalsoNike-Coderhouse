@@ -123,8 +123,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 #STATICFILES_DIRS = os.path.join(BASE_DIR, 'FalsoNike-Coderhouse/static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, '/Users/mlopez/Desktop/Proyectos/falsoNike/FalsoNike-Coderhouse/static'),)
-print('probando');
-print(STATICFILES_DIRS);
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

@@ -1,9 +1,77 @@
-body{
-    background: url('/media/b.jpg');
-    background-repeat: no-repeat; 
-    background-size:cover;
+.navbar{
+    background: rgba(0, 0, 0, 0);
 }
 
-.navbar{
-    background: rgba(76, 1, 214, 0.275);
+.navbar-nav{
+    text-transform: uppercase;
+    font-family: Roboto,sans-serif;
+    font-size: 0.8rem;
+}
+
+.color-text{
+    color:#ffffff
+}
+
+#video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#video-fondo video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.nav-link:hover{
+    color: #baff60;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.dropdown-menu .dropdown-item{
+    color: #2f44598a;
+}
+
+.form-inline .form-control{
+    background-color: #fff0;
+    border-style: inset;
+}
+
+.form-inline input::placeholder {
+    color: rgb(240, 240, 240);
+}
+
+.form-inline .btn-outline-success {
+    color: #baff60;
+    border-color: #baff60;
+}
+
+.form-inline .btn-outline-success:hover {
+    background-color: #ffffff28;
+    border-color: #baff60;
+}
+
+
+.form-inline .form-control{
+    border-radius: 25px;
+    color: #fff;
+}
+
+.form-inline .form-control:focus{
+    background-color: #ffffffb6;
+}
+
+.form-inline .form-control:focus::placeholder{
+    color: black;
+}
+
+.form-inline .form-control:focus{
+    box-shadow:none;
+    border-color:rgba(0, 0, 0, 0);
 }

@@ -1,134 +1,128 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block titulo %}
-        Inicio
-        {% endblock %}
-    </title>
-    <link rel="stylesheet" type="text/css" href='{% static "css/estilos.css" %}'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="/" style="color:#ffffff";>
-            <img src="/media/nike.png" alt="" width="30" height="30" class="d-inline-block align-text-top" >
-            <use xlink:href="#profile"></use>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Bickham script pro;">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Nike/sobre_nosotros" style="color:#ffffff">
-                        Sobre Nosotros
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-expanded="false" style="color:#ffffff">
-                        Indumentarias
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 5rem">
-                        <a class="dropdown-item" href="/Nike/Remeras">Remeras</a>
-                        <a class="dropdown-item" href="/Nike/Pantalones">Pantalones</a>
-                        <a class="dropdown-item" href="/Nike/Camperas">Camperas</a>
-                        <a class="dropdown-item" href="/Nike/Buzos">Buzos</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-expanded="false" style="color:#faf8f8";>
-                        Calzados
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                        <a class="dropdown-item" href="/Nike/ZapatillaDeportiva/">Zapatillas Deportivas</a>
-                        <a class="dropdown-item" href="/Nike/ZapatillaComunes">Zapatillas Comunes</a>
-                        <a class="dropdown-item" href="/Nike/Botines">Botines</a>
-                        <a class="dropdown-item" href="/Nike/Ojotas">Ojotas</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-expanded="false" style="color:#ffffff";>
-                        Accesorios
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/Nike/Pelota">Pelota</a>
-                        <a class="dropdown-item" href="/Nike/Pulseras">Pulseras</a>
-                        <a class="dropdown-item" href="/Nike/Cantiplora">Cantimplora</a>
-                        <a class="dropdown-item" href="/Nike/Anteojos">Anteojos</a>
-                        <a class="dropdown-item" href="/Nike/Muñequeras">Muñequeras</a>
-                        <a class="dropdown-item" href="/Nike/Bolsos_Mochilas">Bolsos y Mochilas</a>
-                        <a class="dropdown-item" href="/Nike/Llaveros">Llaveros</a>
-                    </div>
-                </li>
-                {% if request.user.is_authenticated %}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-expanded="false" style="color:#ffffff";>
-                        Ingresar Productos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 5rem">
-                        <a class="dropdown-item" href="/Nike/ADDIndumentarias/">Indumentarias</a>
-                        <a class="dropdown-item" href="/Nike/ADDCalzados/">Calzados</a>
-                        <a class="dropdown-item" href="/Nike/ADDAccesorios/">Accesorios</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Nike/Detalle_User/{{request.user.pk}}/">Perfil: {{request.user.username}}</a>
-                </li>
-                <li class="nav-item">
-                        <img src="{{request.user.imagen.url}}" style="height: 2rem;">
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#ffffff" href="/logout/">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#ffffff" href="/login/">Login</a>
-                </li>
-                <!--<li class="nav-item">
-                    <a class="nav-link" style="color:#ffffff" href="/register/">Register</a>
-                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#ffffff" href="RegistrarUsuario">Registrar</a>
-                </li>
-                {% endif %}
-                {% if request.user.is_staff %}
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#ffffff" href="/usuarios/listado_usuario/">Control Usuarios</a>
-                </li>
-                {% endif %}
-            </ul>
-            <form class="form-inline my-2 my-lg-0" action="/Nike/buscar_productos_indumentarias/" method="GET" >
-                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name='search' >
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:#ffffff";>Search</button>
-            </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block titulo %}
+            Inicio
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href='{% static "css/estilos.css" %}'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/">
+                <img src="/media/nike.png" alt="" width="30" height="30" class="d-inline-block align-text-top" >
+                <use xlink:href="#profile"></use>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Bickham script pro;">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link color-text" href="/Nike/sobre_nosotros">
+                            Sobre Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle color-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Indumentarias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 5rem">
+                            <a class="dropdown-item" href="/Nike/Remeras">Remeras</a>
+                            <a class="dropdown-item" href="/Nike/Pantalones">Pantalones</a>
+                            <a class="dropdown-item" href="/Nike/Camperas">Camperas</a>
+                            <a class="dropdown-item" href="/Nike/Buzos">Buzos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle color-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Calzados
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                            <a class="dropdown-item" href="/Nike/ZapatillaDeportiva/">Zapatillas Deportivas</a>
+                            <a class="dropdown-item" href="/Nike/ZapatillaComunes">Zapatillas Comunes</a>
+                            <a class="dropdown-item" href="/Nike/Botines">Botines</a>
+                            <a class="dropdown-item" href="/Nike/Ojotas">Ojotas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle color-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Accesorios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Nike/Pelota">Pelota</a>
+                            <a class="dropdown-item" href="/Nike/Pulseras">Pulseras</a>
+                            <a class="dropdown-item" href="/Nike/Cantiplora">Cantimplora</a>
+                            <a class="dropdown-item" href="/Nike/Anteojos">Anteojos</a>
+                            <a class="dropdown-item" href="/Nike/Muñequeras">Muñequeras</a>
+                            <a class="dropdown-item" href="/Nike/Bolsos_Mochilas">Bolsos y Mochilas</a>
+                            <a class="dropdown-item" href="/Nike/Llaveros">Llaveros</a>
+                        </div>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle color-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Ingresar Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 5rem">
+                            <a class="dropdown-item" href="/Nike/ADDIndumentarias/">Indumentarias</a>
+                            <a class="dropdown-item" href="/Nike/ADDCalzados/">Calzados</a>
+                            <a class="dropdown-item" href="/Nike/ADDAccesorios/">Accesorios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Nike/Detalle_User/{{request.user.pk}}/">Perfil: {{request.user.username}}</a>
+                    </li>
+                    <li class="nav-item">
+                            <img src="{{request.user.imagen.url}}" style="height: 2rem;">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-text" href="/logout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link color-text" href="/login/">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-text" href="RegistrarUsuario">Registrar</a>
+                    </li>
+                    {% endif %}
+                    {% if request.user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link color-text" href="/usuarios/listado_usuario/">Control Usuarios</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="/Nike/buscar_productos_indumentarias/" method="GET" >
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name='search' >
+                    <button class="btn btn-outline-success my-2 my-sm-0 color-text" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div id="video-fondo">
+            <video autoplay loop muted>
+                <source src="../media/nike.mp4" type="video/mp4">
+            </video>
         </div>
-    </nav>
-    {% block contenido %}
-    {% endblock %}
-</body>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-
+        {% block contenido %}
+        {% endblock %}
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
 </html>
