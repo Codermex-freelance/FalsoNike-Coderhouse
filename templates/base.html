@@ -106,16 +106,16 @@
                     {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0" action="/Nike/buscar_productos_indumentarias/" method="GET" >
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name='search' >
-                    <button class="btn btn-outline-success my-2 my-sm-0 color-text" type="submit">Search</button>
+                    <input class="form-control mr-sm-2 custom-font" type="text" placeholder="Buscar" aria-label="Search" name='search' >
+                    <button class="btn btn-outline-success my-2 my-sm-0 color-text custom-font" type="submit">Search</button>
                 </form>
             </div>
         </nav>
-        <div id="video-fondo">
+        <section id="video-fondo">
             <video autoplay loop muted>
                 <source src="../media/nike.mp4" type="video/mp4">
             </video>
-        </div>
+        </section>
         {% block contenido %}
         {% endblock %}
     </body>
