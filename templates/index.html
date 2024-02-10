@@ -7,43 +7,37 @@ Inicio
 {% block contenido %}
 <section class="publicidad">
     <div class="publicidad-banner">
-        <a href="RegistrarUsuario">
+        <a class="publicidad-enlace" href="RegistrarUsuario">
             <img src="../media/publicidad.jpg" alt="publicidad">
         </a>
     </div>
 </section>
-<main>
-    <section class="contenido">
-        <h2 class="contenido-heading custom-font">ELEVÁ TU ESTILO</h2>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active" >
-                        <img src="/media/1.jpg" class="d-block w-141" alt="banner3" width="400" height="500">
-                        <img src="/media/2.webp" class="d-block w-141" alt="banner3" width="400" height="500">
-                        <img src="/media/3.webp" class="d-block w-141" alt="banner3" width="400" height="500" >
-                    
+<main> 
+    <h2 class="contenido-heading custom-font text-shadow-pop-top"><q>ELEVÁ TU ESTILO</q></h2>
+    <ul class="proyectos__grid">
+        <li class="proyecto">
+            <figure class="proyecto__contenido">
+                <div class="proyecto__imagen">
+                    <img src="../media/1.jpg" alt="banner3" width="400" height="500">
                 </div>
-                <!--<div class="carousel-item ">
-                    <center>
-                        <img src="/media/AH7363-107_0.jpg" class="d-block w-141" alt="banner3" width="400" height="500">
-                    </center>
+            </figure>
+        </li>
+        <li class="proyecto">
+            <figure class="proyecto__contenido">
+                <div class="proyecto__imagen">
+                    <img src="../media/2.webp" alt="banner3" width="400" height="500">
+
                 </div>
-                <div class="carousel-item ">
-                    <center>
-                        <img src="/media/AC2286-010_0.jpg" class="d-block w-141" alt="banner3" width="400" height="500" >
-                    </center>
-                </div>-->
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-    </div>
-    </section>
+            </figure>
+        </li>
+        <li class="proyecto">
+            <figure class="proyecto__contenido">
+                <div class="proyecto__imagen">
+                    <img src="../media/3.webp" alt="banner3" width="400" height="500" >
+                </div>
+            </figure>
+        </li>
+    </ul>
 </main>
 <div class = "text-center">
     <!--<h1 style="font-family:Rockwell;color:#000000">Bienvenido a FalsoNike</h1>

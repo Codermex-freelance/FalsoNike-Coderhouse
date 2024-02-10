@@ -75,25 +75,56 @@
 
 /* PUBLICIDAD */
 
-.publicidad .publicidad-banner{
-    width: 100%;
-    padding: 1rem;
-}
-
 .publicidad-banner img{
     cursor: pointer;
+    width: 100%;
+    padding: 1rem 1rem 0;
+    
 }
 
 /* CONTENIDO */
+
+ul{
+    padding: 0 2rem;
+}
+
+li{
+    list-style-type: none;
+}
 
 .contenido-heading{
     text-align: center;
     font-size: 40px;
     font-weight: 600;
+    margin: 1rem 0;
 }
 
-.carousel-item{
+.proyectos__grid {
+    text-align: center;
+    /*margin: 3rem 5px;*/
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3,1fr);
 }
+
+.proyecto__contenido {
+    margin: 0;
+    position: relative;
+}
+
+.proyecto__imagen {
+    aspect-ratio: 8/3.7;
+    background-size: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 0 0;
+    background-color: #baff60;
+}
+
+.proyecto__imagen img{
+    width: 100%;
+    height: 150%;
+}
+
+/* login / registro */
+
