@@ -98,6 +98,8 @@ li{
     font-size: 40px;
     font-weight: 600;
     margin: 1rem 0;
+    background-color: #ebeef0;
+    padding: 1rem;
 }
 
 .proyectos__grid {
@@ -133,7 +135,20 @@ li{
     text-transform: uppercase;
     padding: 2rem;
     background-color: #ede734;
+    margin: 1rem 0;
 }
 
+.contenedor__info .promocion{
+    position: fixed;
+    top: 154px;
+    left: 33px;
+    width: 40%;
+    height: 70%;
+    background-color: #ff00007d;
+}
+
+.contenedor__info .promocion h2 span{
+    font-size: 20rem;
+}
 /* login / registro */
 
