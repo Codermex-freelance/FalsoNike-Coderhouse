@@ -71,6 +71,7 @@
 
 .custom-font {
     font-family: 'Roboto', sans-serif;
+    /*font-family: 'Protest', sans-serif;*/
 }
 
 /* PUBLICIDAD */
@@ -104,7 +105,7 @@ li{
     /*margin: 3rem 5px;*/
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,2fr);
 }
 
 .proyecto__contenido {
@@ -124,6 +125,14 @@ li{
 .proyecto__imagen img{
     width: 100%;
     height: 150%;
+    object-fit: cover;
+}
+
+.contenedor__heading{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+    background-color: #ede734;
 }
 
 /* login / registro */
