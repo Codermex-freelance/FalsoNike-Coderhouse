@@ -114,11 +114,6 @@
                 </form>
             </div>
         </nav>
-        <section id="video-fondo">
-            <video autoplay loop muted>
-                <source src="../media/nike.mp4" type="video/mp4">
-            </video>
-        </section>
         {% block contenido %}
         {% endblock %}
     </body>
@@ -128,4 +123,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+    <script>
+        const menuActual = window.location.pathname.split("/")[1]; 
+        if (menuActual === "login") {
+            document.body.classList.add("fondo-login");
+        }
+    </script>
 </html>

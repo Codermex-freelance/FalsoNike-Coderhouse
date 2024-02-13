@@ -5,6 +5,11 @@ Inicio
 {% endblock %}
 
 {% block contenido %}
+<section id="video-fondo">
+    <video autoplay loop muted>
+        <source src="../media/nike.mp4" type="video/mp4">
+    </video>
+</section>
 <section class="publicidad">
     <div class="publicidad-banner">
         <a class="publicidad-enlace" href="RegistrarUsuario">
@@ -42,13 +47,67 @@ Inicio
     <h2 class="contenedor__heading">Unete al club y obtenga hasta 6 cuotas sin interés</h2>
     <!--<h1 style="font-family:Rockwell;color:#000000">Bienvenido a FalsoNike</h1>
     <h5 style="font-family:Rockwell;color:#000000">PRODUCTOS DE CALIDAD</h5>-->
-        <div class="contenedor__info">
-            <img src="../media/running.jpg" alt="">
-            <div class="promocion">
-                <h2>¡Hasta <span>40%</span> off!</h2>
-            </div>
+    <div class="contenedor__info">
+        <img src="../media/running.jpg" alt="">
+        <div class="promocion">
+            <h2>¡Hasta <span>40%</span> off!</h2>
         </div>
+    </div>
 </section>
+<footer class="footer">
+    <div class="footer__contenido">
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Bickham script pro;">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <h6 class="footer__heading"><a class="item" href="/Nike/sobre_nosotros" style="color: #212529;">
+                            Sobre Nosotros
+                        </a></h6>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <h6 class="footer__heading">Indumentarias</h6>
+                        <a class="item" href="/Nike/Remeras">Remeras</a>
+                        <a class="item" href="/Nike/Pantalones">Pantalones</a>
+                        <a class="item" href="/Nike/Camperas">Camperas</a>
+                        <a class="item" href="/Nike/Buzos">Buzos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <h6 class="footer__heading">Calzados</h6>
+                        <a class="item" href="/Nike/ZapatillaDeportiva/">Zapatillas Deportivas</a>
+                        <a class="item" href="/Nike/ZapatillaComunes">Zapatillas Comunes</a>
+                        <a class="item" href="/Nike/Botines">Botines</a>
+                        <a class="item" href="/Nike/Ojotas">Ojotas</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <h6 class="footer__heading">Accesorios</h6>
+                        <a class="item" href="/Nike/Pelota">Pelota</a>
+                        <a class="item" href="/Nike/Pulseras">Pulseras</a>
+                        <a class="item" href="/Nike/Cantiplora">Cantimplora</a>
+                        <a class="item" href="/Nike/Anteojos">Anteojos</a>
+                        <a class="item" href="/Nike/Muñequeras">Muñequeras</a>
+                        <a class="item" href="/Nike/Bolsos_Mochilas">Bolsos y Mochilas</a>
+                        <a class="item" href="/Nike/Llaveros">Llaveros</a>
+                    </li>
+                </ul>
+            </div>
+            <h2 class="footer__logo"><a class="navbar-brand" href="/">
+                <img src="../media/nike.png" alt="" width="30" height="30" class="d-inline-block align-text-top" >
+            </a> FalsoNike</h2>
+        </nav>
+    </div>
+    <div class="footer__frase">
+        © 2023 FALSONIKE POR MLOPEZ. DESARROLLANDO MIS SUEÑOS DESDE ARGENTINA -
+        BUENOS AIRES
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill"
+        viewBox="0 0 16 16">
+        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        </svg>
+    </div>
+</footer>
 
 
 {% endblock %}
