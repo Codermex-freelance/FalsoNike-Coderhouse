@@ -198,103 +198,135 @@ li{
 }
 
 .fondo-login{
-    background-image: url("../media/cristiano.jpg");
+    /*background-image: url("../../media/pexels-rostislav-uzunov-5011647.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;*/
+    background-color: #7d2ae8;
+}
+
+.central__div{
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    height: 100%;
+}
+
+.login__grid{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-items: center;
+}
+
+.form__heading{
+    grid-column: 1/2;
+    padding: 0;
 }
 
 .frase_login{
-    color: #7d2ae8;
+    color: #545b62; /*#7d2ae8;*/
+    font-family: fantasy;
+    padding: 1rem 0;
+    margin: 0;
 }
 
-.button {
-    position: relative;
-    padding: 10px 22px;
-    border-radius: 6px;
+.form{
+    padding: 2rem 0px;
+}
+.form label{
+    font-family: system-ui;
+}
+
+.form__content{
+    border: 1px solid #0000;
+}
+
+.form__grid{
+    display: grid;
+    gap: 0rem;
+    grid-template-columns: repeat(2,1fr);
+    height: 100%;
+}
+
+.form__grid img{
+    max-width: 100%;
+    grid-column: 2/3;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.form button{
+    justify-content: center;
+}
+
+button {
+    padding: 0;
+    margin: 0;
     border: none;
-    color: #fff;
+    background: none;
     cursor: pointer;
-    background-color: #7d2ae8;
-    transition: all 0.2s ease;
-  }
-  
-  .button:active {
-    transform: scale(0.96);
-  }
-  
-  .button:before,
-  .button:after {
+}
+
+button {
+    --primary-color: #fff;
+    --hovered-color: #baff60;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+button p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+button::after {
     position: absolute;
     content: "";
-    width: 150%;
-    left: 50%;
-    height: 100%;
-    transform: translateX(-50%);
-    z-index: -1000;
-    background-repeat: no-repeat;
-  }
-  
-  .button:hover:before {
-    top: -70%;
-    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%);
-    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
-      10% 10%, 18% 18%;
-    background-position: 50% 120%;
-    animation: greentopBubbles 0.6s ease;
-  }
-  
-  @keyframes greentopBubbles {
-    0% {
-      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
-        40% 90%, 55% 90%, 70% 90%;
-    }
-  
-    50% {
-      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
-        50% 50%, 65% 20%, 90% 30%;
-    }
-  
-    100% {
-      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
-        50% 40%, 65% 10%, 90% 20%;
-      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
-  }
-  
-  .button:hover::after {
-    bottom: -70%;
-    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-      radial-gradient(circle, #7d2ae8 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
-    background-position: 50% 0%;
-    animation: greenbottomBubbles 0.6s ease;
-  }
-  
-  @keyframes greenbottomBubbles {
-    0% {
-      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
-        70% -10%, 70% 0%;
-    }
-  
-    50% {
-      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
-        105% 0%;
-    }
-  
-    100% {
-      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
-        110% 10%;
-      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
-  }
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+}
+
+button p::before {
+    position: absolute;
+    /*   box-sizing: border-box; */
+    content: "Ingresar";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+}
+
+button:hover::after {
+    width: 100%;
+}
+
+button:hover p::before {
+    width: 100%;
+}
+
+button:hover svg {
+    transform: translateX(4px);
+    color: var(--hovered-color);
+}
+
+button svg {
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+}
+
